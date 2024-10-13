@@ -46,11 +46,14 @@ Through this project, I learned more about Wikipedia article quality and how bia
 During the process of the project, I noticed that some of the politicians listed were denoted as "Korean", with no mention of North or South. A simple investigation into these articles showed that these politicians were from before the Korean War, before the split into North and South Korea. This poses a couple questions - what time period are these politicians from? And what time period is the population data from? Is this comparison meaningful? I think this would be a good starting point for any further investigation or improvements upon this analysis.
 
 What biases did you expect to find in the data (before you started working with it), and why?
+
 I expected to find more pages for English-speaking countries, namely European and North American countries, since English Wikipedia would mainly be used by English speakers. I also expected more pages for the Western countries due to the nature of politics and the general focus on Western politics on the global scale. There may also be more pages for controversial or notorious politicians with more issues related to them, and likely a better quality rating due to the increased material available.
 
 What (potential) sources of bias did you discover in the course of your data processing and analysis?
+
 In the course of processing the data, I discovered that the original dataset of politicians was already biased - there were no North American politicians and very few politicians for countries like China and Great Britain. I also discovered that the Korean politician list included politicians from before North and South Korea were formed, leading to an inability to map these politicians to a country's population. During analysis, I found that the regions with the most coverage and quality were mainly in Europe, with African and Asian regions having the worst coverage/article quality. This aligns with my original hypothesis about Wikipedia having more coverage for Western regions than others.
 
 What might your results suggest about (English) Wikipedia as a data source?
+
 These results suggest that English Wikipedia is biased towards Western countries. There's more information on Western countries than other regions, so using Wikipedia as a data source may lead to a skewed dataset with less representation of other regions. It can also be noted that English Wikipedia caters to English speaking regions, so it may be better to use another region's Wikipedia (in another language) for that region's data. 
 
