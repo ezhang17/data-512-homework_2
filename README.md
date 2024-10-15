@@ -41,6 +41,18 @@ Schema:
 | revision_id | Integer |
 | article_quality | String |
 
+### Analysis
+We analyze article coverage per capita and article quality per capita at both the country and regional level.
+The notebook outputs 6 tables for the analyses below:
+- Top 10 countries by coverage: The 10 countries with the highest total articles per capita (in descending order).
+- Bottom 10 countries by coverage: The 10 countries with the lowest total articles per capita (in ascending order).
+- Top 10 countries by high quality: The 10 countries with the highest high quality articles per capita (in descending order).
+- Bottom 10 countries by high quality: The 10 countries with the lowest high quality articles per capita (in ascending order).
+- Geographic regions by total coverage: A rank ordered list of geographic regions (in descending order) by total articles per capita.
+- Geographic regions by high quality coverage: Rank ordered list of geographic regions (in descending order) by high quality articles per capita.
+
+Note that population data is represented in millions.
+
 ### Research Implications
 Through this project, I learned more about Wikipedia article quality and how bias can shape the outcomes of an analysis. I was surprised to see the lack of data for North American politicians in the politician dataset, considering that this is an English Wikipedia dataset. Because of this missing data, the outcomes of the analyses conducted may not reflect the true distribution of politicians' English Wikipedia pages, but I still think that the outcomes can be used as food for thought and a starting point for further investigation. The analyses showed that European countries had the best coverage and article quality per capita, while African and Asian countries had the worst coverage and quality per capita.
 
