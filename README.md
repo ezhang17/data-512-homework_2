@@ -2,21 +2,36 @@
 ### Purpose
 This project analyzes the English Wikipedia article coverage and quality per capita for politicians over different regions and countries. This project also aims to take a look into biases in data and its implications in analysis.
 
-### Licensing
-Any Wikipedia content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en).
+### About Code
+The politician_wiki_pages_analysis.ipynb Jupyter Notebook contains all data collection, cleaning, and analysis code. The notebook also includes 6 embedded tables for analysis (more on this in the Analysis section).
 
-API code is adapted from [page info code example, Revision 1.2 - September 16, 2024](https://drive.google.com/file/d/1iGH_pOMlspeCwDzKCPRlQdq73iS16R6k/view?usp=drive_link) and [ORES code example, Revision 1.0 - August 15, 2023](https://drive.google.com/file/d/1GN1ULxKombHRzVsNKzj7tBhnBrSWUWXc/view?usp=drive_link) developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/).
+The notebook requires installation of the following packages:
+
+Standard Python modules:
+- json
+- time
+- urllib.parse
+
+Other Python modules:
+- requests (for API requests)
+- pandas (for dataframes and analysis)
+- os, dotenv (for API credentials)
+
+### Licensing
+Wikipedia content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en).
+
+API requests code is adapted from [page info code example, Revision 1.2 - September 16, 2024](https://drive.google.com/file/d/1iGH_pOMlspeCwDzKCPRlQdq73iS16R6k/view?usp=drive_link) and [ORES code example, Revision 1.0 - August 15, 2023](https://drive.google.com/file/d/1GN1ULxKombHRzVsNKzj7tBhnBrSWUWXc/view?usp=drive_link) developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/).
 
 ### Data
-Politician data is crawled from [this Wikipeidia category](https://en.wikipedia.org/wiki/Category:Politicians_by_nationality) and stored as a CSV file [here](https://drive.google.com/file/d/1UZ9QUYQ1R2T3Nzau85ToSNkvEzXwLUtf/view?usp=sharing). Population data is from the [world population data sheet](https://www.prb.org/international/indicator/population/table/) published by the Population Reference Bureau and stored as a CSV file [here](https://drive.google.com/file/d/1PlBRdx1t2eSCymXmOqtWXFJPiMn_gTQS/view?usp=sharing). 
-Politician data was then cleaned by filtering out keywords (council of, family, president) to keep the dataset to individual politicians. 
+Politician data is crawled from [this Wikipedia category](https://en.wikipedia.org/wiki/Category:Politicians_by_nationality) and stored as a CSV file [here](https://drive.google.com/file/d/1UZ9QUYQ1R2T3Nzau85ToSNkvEzXwLUtf/view?usp=sharing). Population data is from the [world population data sheet](https://www.prb.org/international/indicator/population/table/) published by the Population Reference Bureau and stored as a CSV file [here](https://drive.google.com/file/d/1PlBRdx1t2eSCymXmOqtWXFJPiMn_gTQS/view?usp=sharing).
+Politician data was then cleaned by filtering out keywords (council of, family, president) to keep the dataset to individual politicians.
 
 Article revision IDs and quality data are retrieved using the following APIs:
 Article revision IDs:
-Revision IDs are necessary to retrieve quality scores. These IDs are retrieved using the [MediaWiki REST API for the EN Wikipedia](https://www.mediawiki.org/wiki/API:Main_page).
+Revision IDs are necessary to retrieve quality scores. These IDs are retrieved using the [MediaWiki REST API for the EN Wikipedia](https://www.mediawiki.org/wiki/API:Main_page). Example code can be found here, [page info code example, Revision 1.2 - September 16, 2024](https://drive.google.com/file/d/1iGH_pOMlspeCwDzKCPRlQdq73iS16R6k/view?usp=drive_link).
 
 Article ORES scores:
-ORES scores are retrieved from the [ORES API](https://wikitech.wikimedia.org/wiki/Machine_Learning/LiftWing).
+ORES scores are retrieved from the [ORES API](https://wikitech.wikimedia.org/wiki/Machine_Learning/LiftWing). Example code can be found here, [ORES code example, Revision 1.0 - August 15, 2023](https://drive.google.com/file/d/1GN1ULxKombHRzVsNKzj7tBhnBrSWUWXc/view?usp=drive_link).
 Quality scores are defined as such:
 FA - Featured article
 GA - Good article (also known as A-Class)
@@ -34,7 +49,7 @@ wp_politicians_by_country.csv contains the country, region, population, article 
 Schema:
 | Column    | Data Type |
 | -------- | ------- |
-| country | String | 
+| country | String |
 | region | String |
 | population | Float |
 | article_title | String |
@@ -68,5 +83,5 @@ In the course of processing the data, I discovered that the original dataset of 
 
 What might your results suggest about (English) Wikipedia as a data source?
 
-These results suggest that English Wikipedia is biased towards Western countries. There's more information on Western countries than other regions, so using Wikipedia as a data source may lead to a skewed dataset with less representation of other regions. It can also be noted that English Wikipedia caters to English speaking regions, so it may be better to use another region's Wikipedia (in another language) for that region's data. 
+These results suggest that English Wikipedia is biased towards Western countries. There's more information on Western countries than other regions, so using Wikipedia as a data source may lead to a skewed dataset with less representation of other regions. It can also be noted that English Wikipedia caters to English speaking regions, so it may be better to use another region's Wikipedia (in another language) for that region's data.
 
