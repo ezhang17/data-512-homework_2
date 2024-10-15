@@ -11,11 +11,12 @@ Standard Python modules:
 - json
 - time
 - urllib.parse
+- os
 
 Other Python modules:
 - requests (for API requests)
 - pandas (for dataframes and analysis)
-- os, dotenv (for API credentials)
+- dotenv (for API credentials)
 
 ### Licensing
 Wikipedia content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en).
